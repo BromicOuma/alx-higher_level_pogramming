@@ -2,10 +2,12 @@
 
 """Square Class
 
+
 Empty class and wiil return nothing
+
 
 """
 
+
 class Square:
     pass
-
