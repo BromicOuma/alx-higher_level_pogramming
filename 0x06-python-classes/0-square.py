@@ -1,11 +1,6 @@
 #!/usr/bin/python3
-
 """Square Class
-
-
-Empty class and wiil return nothing
-
-
+This class don't do anything for the moment
 """
 
 
