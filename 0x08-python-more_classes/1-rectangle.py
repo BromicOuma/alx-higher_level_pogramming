@@ -1,86 +1,138 @@
 #!/usr/bin/python3
-"""Class Rectangle that defines a rectangle """
+"""A class Rectangle."""
 
 
 class Rectangle:
-    """__init__
-    Clss init
+    """A class that defines a rectangle.
 
-    Atributes:
+    Attributes:
+        __height (int): The height of the rectangle.
+        __width (int): The width of the rectangle.
 
     Raises:
-        TypeError: if not int
-        ValueError : if less than 0
+        TypeError: If the input parameter is not an integer.
+        ValueError: If the input parameter is less than or equal to zero.
     """
 
     def __init__(self, width=0, height=0):
-        """__innitializes the rectanles instance with width and height"""
+        """Initializes a new instance of the Rectangle class.
+
+        Args:
+            width (int): The width of the rectangle.
+            height (int): The height of the rectangle.
+        """
 
         self.__height = self.__valid_height(height)
         self.__width = self.__valid_width(width)
 
     @property
     def height(self):
-        """Return the height of the rectangle """
+        """Returns the height of the rectangle."""
 
         return self.__height
 
     @height.setter
     def height(self, value):
-        """ Check the parameter height and if valid sets it """
+        """Sets the height of the rectangle.
+
+        Args:
+            value (int): The new height of the rectangle.
+
+        Raises:
+            TypeError: If the input parameter is not an integer.
+            ValueError: If the input parameter is less than or equal to zero.
+        """
+
         self.__height = self.__valid_height(value)
 
     @property
     def width(self):
-        """Return the width of the rectangle """
+        """Returns the width of the rectangle."""
 
         return self.__width
 
     @width.setter
     def width(self, value):
-        """ Check the parameter height and if valid sets it """
+        """Sets the width of the rectangle.
+
+        Args:
+            value (int): The new width of the rectangle.
+
+        Raises:
+            TypeError: If the input parameter is not an integer.
+            ValueError: If the input parameter is less than or equal to zero.
+        """
+
         self.__width = self.__valid_width(value)
 
     def __valid_height(self, height):
-        """Check if the height is valid"""
+        """Checks if the height parameter is valid.
 
-        if self.__check_type(height) is False:
-            raise TypeError("height must be a integer")
+        Args:
+            height (int): The height of the rectangle.
 
-        if self.__check_if_int(height) is False:
+        Raises:
+            TypeError: If the input parameter is not an integer.
+            ValueError: If the input parameter is less than or equal to zero.
+
+        Returns:
+            int: The valid height of the rectangle.
+        """
+
+        if not isinstance(height, int):
+            raise TypeError("height must be an integer")
+        elif height < 0:
             raise ValueError("height must be >= 0")
-
-        self.__height = height
-        return self.__height
+        return height
 
     def __valid_width(self, width):
-        """Check if the width is valid """
+        """Checks if the width parameter is valid.
 
-        if self.__check_type(width) is False:
+        Args:
+            width (int): The width of the rectangle.
+
+        Raises:
+            TypeError: If the input parameter is not an integer.
+            ValueError: If the input parameter is less than or equal to zero.
+
+        Returns:
+            int: The valid width of the rectangle.
+        """
+
+        if not isinstance(width, int):
             raise TypeError("width must be an integer")
-
-        if self.__check_if_int(width) is False:
+        elif width < 0:
             raise ValueError("width must be >= 0")
-
-        self.__width = width
-        return self.__width
+        return width
 
     @staticmethod
     def __check_type(value):
-        """Check if type is int """
+        """Checks if the input parameter is an integer.
 
-        if type(value) is int:
+        Args:
+            value: The input value to check.
+
+        Returns:
+            bool: True if the value is an integer, False otherwise.
+        """
+
+        if isinstance(value, int):
             return True
-
         else:
             return False
 
     @staticmethod
     def __check_if_int(value):
-        """Check if the vlaue is an integer """
+        """Checks if the input parameter is greater than zero.
+
+        Args:
+            value: The input value to check.
+
+        Returns:
+            bool: True if the value is greater than zero, False otherwise.
+        """
 
         if value > 0:
             return True
-
         else:
             return False
