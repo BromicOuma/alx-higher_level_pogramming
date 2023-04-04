@@ -78,14 +78,12 @@ class Rectangle:
         Returns:
             int: The valid height of the rectangle.
         """
-        if self.__check_type(height) is False:
-            raise TypeError("height must be a integer")
 
-        if self.__check_if_int(height) is False:
+        if not isinstance(height, int):
+            raise TypeError("height must be an integer")
+        elif height < 0:
             raise ValueError("height must be >= 0")
-
-        self.__height = height
-        return self.__height
+        return height
 
     def __valid_width(self, width):
         """Checks if the width parameter is valid.
@@ -101,43 +99,8 @@ class Rectangle:
             int: The valid width of the rectangle.
         """
 
-        if self.__check_type(width) is False:
+        if not isinstance(width, int):
             raise TypeError("width must be an integer")
-
-        if self.__check_if_int(width) is False:
+        elif width < 0:
             raise ValueError("width must be >= 0")
-
-        self.__width = width
-        return self.__width
-
-    @staticmethod
-    def __check_type(value):
-        """Checks if the input parameter is an integer.
-
-        Args:
-            value: The input value to check.
-
-        Returns:
-            bool: True if the value is an integer, False otherwise.
-        """
-
-        if isinstance(value, int):
-            return True
-        else:
-            return False
-
-    @staticmethod
-    def __check_if_int(value):
-        """Checks if the input parameter is greater than zero.
-
-        Args:
-            value: The input value to check.
-
-        Returns:
-            bool: True if the value is greater than zero, False otherwise.
-        """
-
-        if value > 0:
-            return True
-        else:
-            return False
+        return width
