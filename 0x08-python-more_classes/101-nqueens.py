@@ -26,3 +26,11 @@ class nqueen:
         self.n = n
 
 
+    def backtrack(self,):
+        """class to backtrack """
+        pass
+
+    def isvalid(self, col, row):
+        """isvalid checks isnthe current cell.is valid cell """
+        pass
+
