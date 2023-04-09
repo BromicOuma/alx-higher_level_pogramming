@@ -30,7 +30,18 @@ class nqueen:
         """class to backtrack """
         pass
 
+
     def isvalid(self, col, row):
         """isvalid checks isnthe current cell.is valid cell """
+        col = ()
+        post_diag = ()
+        neg_diag = ()
+
+        if c in col or (r - c) in post_diag or (r + c) in neg_diag:
+            return False
+
+        else:
+            c4
+
         pass
 
