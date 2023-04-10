@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 class Square:
-    """Square Class
-    A Square Class
+    """Square Class A Square Class
     """
 
     def __init__(self, size=0):
@@ -24,6 +23,7 @@ class Square:
 
     @property
     def size(self):
+        """getter """
         return self.__size
 
     @size.setter
@@ -51,6 +51,7 @@ class Square:
         return self.__size ** 2
 
     def my_print(self):
+        """print the pattern """
         if self.__size == 0:
             print()
             return None
