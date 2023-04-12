@@ -6,4 +6,4 @@ def read_file(filename=""):
     """read file print to stdout """
     with open(filename, "r", encoding="utf-8") as fp:
         for lines in fp:
-            print(lines)
+            print(lines, end='')
