@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""save json to a list """
+"""load save json to a list """
 from os import path
 from sys import argv
 
