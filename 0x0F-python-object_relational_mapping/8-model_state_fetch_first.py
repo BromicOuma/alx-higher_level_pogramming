@@ -20,4 +20,4 @@ if __name__ == "__main__":
 
     first_object = session.query(State).first()
     if first_object:
-        print('{}: {}'.format(first_object.id, first_object.name))
+        print('{0}: {1}'.format(first_object.id, first_object.name))
